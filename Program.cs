@@ -803,7 +803,7 @@ namespace RPG_Game_2
             Console.ReadLine();
             Environment.Exit(0);
         }
-        static void BadEnd(Hero hero)
+        static void BadEnd(Hero hero) //BADEND
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
