@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RPG_Game_2
 {
-    class Hero
+    public class Hero
     {
         public string name;
         public string clasS;
@@ -62,52 +62,7 @@ namespace RPG_Game_2
             experience = aExperience;
             maxexperience = aMaxexperience;
         }
-        public double NormalAttack(Hero hero, Enemy enemy)
-        {
-            Random rnd = new Random(Guid.NewGuid().GetHashCode());
-            int hitchance = rnd.Next(1, 101);
-            if (hitchance <= enemy.evasion)
-            {
-                Miscellaneous.EnemyDodge();
-                return enemy.health;
-            }
-            else
-            {
-                double finalhealth;
-                double damagedealt;
-                Random rnd2 = new Random(Guid.NewGuid().GetHashCode());
-                int critchance = rnd2.Next(1, 101);
-                if (critchance <= hero.critical)
-                {
-                    finalhealth = Math.Round(enemy.health - (hero.damage - (hero.damage * (enemy.armour * 0.01)) + hero.truedamage) * 2, 2, MidpointRounding.ToEven);
-                    damagedealt = enemy.health - finalhealth;
-                    Miscellaneous.HeroCritical();
-                }
-                else
-                {
-                    finalhealth = Math.Round(enemy.health - (hero.damage - (hero.damage * (enemy.armour * 0.01)) + hero.truedamage), 2, MidpointRounding.ToEven);
-                    damagedealt = enemy.health - finalhealth;
-                }
-                Miscellaneous.DamageDealt(damagedealt);
-                return finalhealth;
-            }
 
-        }
-        public void NormalAttackText(string clasS)
-        {
-            switch (clasS)
-            {
-                case "Knight":
-                    Console.WriteLine("-You slash with your sword.");
-                    break;
-                case "Hunter":
-                    Console.WriteLine("-You shoot an arrow.");
-                    break;
-                case "Rogue":
-                    Console.WriteLine("-You slash with your dagger.");
-                    break;
-            }
-        }
         public void AbilitiesPerClass(string clasS, double mana, double action)
         {
             Console.WriteLine("");

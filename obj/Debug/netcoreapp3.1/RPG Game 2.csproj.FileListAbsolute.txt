@@ -11,3 +11,16 @@ C:\Users\Slavi\source\repos\RPG Game 2\obj\Debug\netcoreapp3.1\RPG Game 2.csproj
 C:\Users\Slavi\source\repos\RPG Game 2\obj\Debug\netcoreapp3.1\RPG Game 2.dll
 C:\Users\Slavi\source\repos\RPG Game 2\obj\Debug\netcoreapp3.1\RPG Game 2.pdb
 C:\Users\Slavi\source\repos\RPG Game 2\obj\Debug\netcoreapp3.1\RPG Game 2.genruntimeconfig.cache
+D:\My Stuff\Git Repository\bin\Debug\netcoreapp3.1\RPG Game 2.exe
+D:\My Stuff\Git Repository\bin\Debug\netcoreapp3.1\RPG Game 2.deps.json
+D:\My Stuff\Git Repository\bin\Debug\netcoreapp3.1\RPG Game 2.runtimeconfig.json
+D:\My Stuff\Git Repository\bin\Debug\netcoreapp3.1\RPG Game 2.runtimeconfig.dev.json
+D:\My Stuff\Git Repository\bin\Debug\netcoreapp3.1\RPG Game 2.dll
+D:\My Stuff\Git Repository\bin\Debug\netcoreapp3.1\RPG Game 2.pdb
+D:\My Stuff\Git Repository\obj\Debug\netcoreapp3.1\RPG Game 2.csprojAssemblyReference.cache
+D:\My Stuff\Git Repository\obj\Debug\netcoreapp3.1\RPG Game 2.AssemblyInfoInputs.cache
+D:\My Stuff\Git Repository\obj\Debug\netcoreapp3.1\RPG Game 2.AssemblyInfo.cs
+D:\My Stuff\Git Repository\obj\Debug\netcoreapp3.1\RPG Game 2.csproj.CoreCompileInputs.cache
+D:\My Stuff\Git Repository\obj\Debug\netcoreapp3.1\RPG Game 2.dll
+D:\My Stuff\Git Repository\obj\Debug\netcoreapp3.1\RPG Game 2.pdb
+D:\My Stuff\Git Repository\obj\Debug\netcoreapp3.1\RPG Game 2.genruntimeconfig.cache
