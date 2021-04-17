@@ -102,7 +102,9 @@ namespace RPG_Game_2
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.DarkGray;
                 Console.Write('?');
+                Console.ForegroundColor = ConsoleColor.White;
             }
         }
 
@@ -189,11 +191,14 @@ namespace RPG_Game_2
                 case 'X':
                     Console.ForegroundColor = ConsoleColor.Blue;
                     break;
+                case '-':
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    break;
                 case 'E':
                     Console.ForegroundColor = ConsoleColor.Red;
                     break;
                 case '!':
-                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     break;
             }
             Console.Write(map[row, cow]);
