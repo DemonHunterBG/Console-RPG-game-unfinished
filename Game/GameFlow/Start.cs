@@ -10,6 +10,7 @@ namespace RPG_Game_2
     {
         static void Main()
         {
+            Console.SetWindowSize(120, 32);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("   ");
             Miscellaneous.SlowWriter("The Bloodiest Moon");
