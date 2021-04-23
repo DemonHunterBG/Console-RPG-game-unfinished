@@ -6,15 +6,14 @@ namespace RPG_Game_2
 {
     class Map
     {
+        public static char[,] map;
+        public static int[,] mapVisibility;
         public static void Start(Hero hero)
         {
             Miscellaneous.mapnumber++;
             MapGenerator.MapGenController();
             MapController(hero);
         }
-
-        public static char[,] map = MapGenerator.map;
-        public static int[,] mapVisibility = MapGenerator.visibilityMap;
 
         public static void MapController(Hero hero)
         {
@@ -39,7 +38,7 @@ namespace RPG_Game_2
                 map[y, x] = marker;
                 marker = '+';
 
-                MovementAndOther(ref x, ref y, ref end);
+                MovementAndOther(ref x, ref y, ref end, map);
 
                 if (map[y, x] != '-')
                 {
@@ -137,7 +136,7 @@ namespace RPG_Game_2
             return n;
         }
 
-        private static void MovementAndOther(ref int x, ref int y, ref bool end)
+        private static void MovementAndOther(ref int x, ref int y, ref bool end, char [,] map)
         {
             Console.WriteLine("\n[up[w]|down[s]|left[a]|right[d]]   [end[e]]");
             Console.Write("Decision:");
@@ -148,28 +147,40 @@ namespace RPG_Game_2
                 case "w":
                     if (y != 0)
                     {
-                        y = y - 1;
+                        if (map[y - 1, x] != 'M')
+                        {
+                            y = y - 1;
+                        }
                     }
                     break;
                 case "down":
                 case "s":
                     if (y + 1 < map.GetLength(0))
                     {
-                        y = y + 1;
+                        if (map[y + 1, x] != 'M')
+                        {
+                            y = y + 1;
+                        }
                     }
                     break;
                 case "left":
                 case "a":
                     if (x != 0)
                     {
-                        x = x - 1;
+                        if (map[y, x - 1] != 'M')
+                        {
+                            x = x - 1;
+                        }
                     }
                     break;
                 case "right":
                 case "d":
                     if (x + 1 < map.GetLength(1))
                     {
-                        x = x + 1;
+                        if (map[y, x + 1] != 'M')
+                        {
+                            x = x + 1;
+                        }
                     }
                     break;
                 case "end":
@@ -194,6 +205,12 @@ namespace RPG_Game_2
                     break;
                 case '!':
                     Console.ForegroundColor = ConsoleColor.Cyan;
+                    break;
+                case 'M':
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    break;
+                case 'S':
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     break;
             }
             Console.Write(map[row, cow]);

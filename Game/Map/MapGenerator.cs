@@ -9,8 +9,6 @@ namespace RPG_Game_2
     {
         private static char[] characters = { '-', '-', '-', '-', 'M', 'E', 'E', 'S' };
         private static char[] charactersnoShop = { '-', '-', '-', '-', '-', 'M', 'E', 'E' };
-        public static char[,] map = new char [0, 0];
-        public static int[,] visibilityMap = new int[0, 0];
 
         public static void MapGenController()
         {
@@ -50,7 +48,7 @@ namespace RPG_Game_2
                         map[row, col] = charactersnoShop[random.Next(0, charactersnoShop.Count())];
                 }
             }
-            MapGenerator.map = map;
+            Map.map = map;
             MapVisibilityGen(ROWS, COLS);
 
         }
@@ -64,7 +62,7 @@ namespace RPG_Game_2
                     map[row, col] = 0;
                 }
             }
-            MapGenerator.visibilityMap = map;
+            Map.mapVisibility = map;
         }
     }
 }
