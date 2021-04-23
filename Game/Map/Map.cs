@@ -6,25 +6,19 @@ namespace RPG_Game_2
 {
     class Map
     {
-        public static char[,] map =
-{
-
-                {'-', '-', '-', '-', '-'},
-                {'-', '-', '-', '-', '-'},
-                {'-', '-', '-', '-', '-'},
-                {'-', 'E', 'E', 'E', '-'},
-                {'-', '-', '-', '-', '!'}
-            };
-        public static int[,] mapVisibility =
-        {
-                {'0', '0', '0', '0', '0'},
-                {'0', '0', '0', '0', '0'},
-                {'0', '0', '0', '0', '0'},
-                {'0', '0', '0', '0', '0'},
-                {'0', '0', '0', '0', '0'}
-            };
         public static void Start(Hero hero)
         {
+            Miscellaneous.mapnumber++;
+            MapGenerator.MapGenController();
+            MapController(hero);
+        }
+
+        public static char[,] map = MapGenerator.map;
+        public static int[,] mapVisibility = MapGenerator.visibilityMap;
+
+        public static void MapController(Hero hero)
+        {
+
             Console.Clear();
 
             map[0, 0] = 'X';
@@ -136,7 +130,7 @@ namespace RPG_Game_2
                         hero.damage, hero.truedamage, hero.critical, hero.armour, hero.evasion);
                     break;
                 case 5:
-                    Console.Write("   [Initiative:{0} | Enemies encoutered:{1}]", hero.initiative, Enemy.enemyCount);
+                    Console.Write("   [Initiative:{0} | Enemies encoutered:{1}] [Map:{2}]", hero.initiative, Enemy.enemyCount, Miscellaneous.mapnumber);
                     break;
             }
             n++;
@@ -145,7 +139,7 @@ namespace RPG_Game_2
 
         private static void MovementAndOther(ref int x, ref int y, ref bool end)
         {
-            Console.WriteLine("\n[up[w]|down[s]|left[a]|right[d]]   [end[end]]");
+            Console.WriteLine("\n[up[w]|down[s]|left[a]|right[d]]   [end[e]]");
             Console.Write("Decision:");
             string direction = Console.ReadLine();
             switch (direction.ToLower())
@@ -173,12 +167,13 @@ namespace RPG_Game_2
                     break;
                 case "right":
                 case "d":
-                    if (x + 1 < map.GetLength(0))
+                    if (x + 1 < map.GetLength(1))
                     {
                         x = x + 1;
                     }
                     break;
                 case "end":
+                case "e":
                     end = true;
                     break;
             }
@@ -210,7 +205,10 @@ namespace RPG_Game_2
             switch (marker)
             {
                 case '!':
-                    end = true;
+                    if (Miscellaneous.mapnumber != 3)
+                        Start(hero);
+                    else 
+                        end = true;
                     break;
                 case 'E':
                     EnemyEncounter.EnemyEncounterChooser(hero);

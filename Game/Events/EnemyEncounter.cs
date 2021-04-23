@@ -12,7 +12,11 @@ namespace RPG_Game_2
             //1.name|2.hp|3.maxhp|4.armour|5.maxarmour|6.evasion|7.maxevasion|8.damage|9.truedamage|10.critical|11.maxcritical|12.int|13.level
             //--1----2--3--4--5--6--7--8--9--10-11-12-13
             Enemy enemy = new Enemy("Blank", "Class", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-            if (Enemy.enemyCount <= 3)
+            if (Miscellaneous.mapnumber == 1)
+            {
+                TierOneEnemies(hero, enemy);
+            }
+            else if (Miscellaneous.mapnumber == 2)
             {
                 TierOneEnemies(hero, enemy);
             }

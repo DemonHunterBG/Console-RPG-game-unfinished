@@ -125,11 +125,15 @@ namespace RPG_Game_2
                     break;
                 case "Blue":
                     Miscellaneous.BattleUI(hero, enemy);
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine(HeroTurn.attacktext);
+                    Console.ForegroundColor = ConsoleColor.White;
                     break;
                 case "Green":
                     Miscellaneous.BattleUI(hero, enemy);
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine(HeroTurn.attacktext);
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     break;
             }
         }

@@ -72,6 +72,7 @@ namespace RPG_Game_2
 
         private static void SmallerInitiative(Enemy enemy)
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("-The {0} takes the initiative.", enemy.name);
             Console.ReadLine();
@@ -101,6 +102,9 @@ namespace RPG_Game_2
                     enemy.critical += 10;
                     enemy.maxcritical += 10;
                     break;
+                default:
+                    SmallerInitiative(enemy);
+                        break;
             }
             Console.ForegroundColor = ConsoleColor.White;
             Console.ReadLine();

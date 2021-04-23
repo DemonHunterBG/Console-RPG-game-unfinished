@@ -8,6 +8,7 @@ namespace RPG_Game_2
     class Miscellaneous
     {
         public static int turn = 1;
+        public static int mapnumber = 0;
         public static void SlowWriter(string text)
         {
             Random rnd = new Random();
