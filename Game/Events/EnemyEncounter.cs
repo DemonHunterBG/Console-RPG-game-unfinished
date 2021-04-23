@@ -20,6 +20,10 @@ namespace RPG_Game_2
             {
                 TierOneEnemies(hero, enemy);
             }
+            else if (Miscellaneous.mapnumber == 3)
+            {
+                TierOneEnemies(hero, enemy);
+            }
 
             CurrentToMax(enemy);
             Console.ReadLine();
