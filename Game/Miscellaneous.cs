@@ -7,8 +7,6 @@ namespace RPG_Game_2
 {
     class Miscellaneous
     {
-        public static int turn = 1;
-        public static int mapnumber = 0;
         public static void SlowWriter(string text)
         {
             Random rnd = new Random();
@@ -42,7 +40,7 @@ namespace RPG_Game_2
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("   -Turn[{0}]\n" + "====================================", Miscellaneous.turn);
+            Console.WriteLine("   -Turn[{0}]\n" + "====================================", BattleFlow.turn);
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("   -" + hero.name + "   -Class: " + hero.clasS);
             Console.ForegroundColor = ConsoleColor.White;
@@ -112,7 +110,7 @@ namespace RPG_Game_2
         }
         public static void EnemyCritical()
         {
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("-You are badly hit. You take critical damage.");
             Console.ForegroundColor = ConsoleColor.White;
         }

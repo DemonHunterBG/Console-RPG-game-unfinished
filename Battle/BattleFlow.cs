@@ -6,6 +6,7 @@ namespace RPG_Game_2
 {
     class BattleFlow
     {
+        public static int turn = 1;
         public static void Battle(Hero hero, Enemy enemy)
         {
 
@@ -91,14 +92,23 @@ namespace RPG_Game_2
             switch (EnemyTurn.outcome)
             {
                 case "Dodge":
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
                     Console.WriteLine(EnemyTurn.attacktext);
+                    Console.ForegroundColor = ConsoleColor.White;
                     Miscellaneous.HeroDodge();
                     break;
                 case "Normal":
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
                     Console.WriteLine(EnemyTurn.attacktext);
+                    Console.ForegroundColor = ConsoleColor.White;
                     Miscellaneous.DamageTaken(EnemyTurn.damagedealt);
                     break;
                 case "Critical":
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine(EnemyTurn.attacktext);
+                    Miscellaneous.EnemyCritical();
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Miscellaneous.DamageTaken(EnemyTurn.damagedealt);
                     break;
             }
         }
@@ -249,7 +259,7 @@ namespace RPG_Game_2
 
         private static void AfterTurnStats(Hero hero)
         {
-            Miscellaneous.turn++;
+            turn++;
             hero.mana = hero.mana + hero.manaregen;
             hero.action = hero.action + hero.actionregen;
         }

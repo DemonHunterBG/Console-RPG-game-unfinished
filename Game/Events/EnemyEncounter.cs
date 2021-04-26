@@ -12,15 +12,15 @@ namespace RPG_Game_2
             //1.name|2.hp|3.maxhp|4.armour|5.maxarmour|6.evasion|7.maxevasion|8.damage|9.truedamage|10.critical|11.maxcritical|12.int|13.level
             //--1----2--3--4--5--6--7--8--9--10-11-12-13
             Enemy enemy = new Enemy("Blank", "Class", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-            if (Miscellaneous.mapnumber == 1)
+            if (Map.mapnumber == 1)
             {
                 TierOneEnemies(hero, enemy);
             }
-            else if (Miscellaneous.mapnumber == 2)
+            else if (Map.mapnumber == 2)
             {
                 TierOneEnemies(hero, enemy);
             }
-            else if (Miscellaneous.mapnumber == 3)
+            else if (Map.mapnumber == 3)
             {
                 TierOneEnemies(hero, enemy);
             }
@@ -32,18 +32,39 @@ namespace RPG_Game_2
 
         private static void TierOneEnemies(Hero hero, Enemy enemy)
         {
-            Random rnd = new Random();
-            int enemyspawnnumber = rnd.Next(1, 4);
-            switch (enemyspawnnumber)
+            Random rnd = new Random(Guid.NewGuid().GetHashCode());
+            int enemyspawnnumber;
+            switch (Map.mapname)
             {
-                case 1:
-                    TierOneEnemyLibrary.Zombie(hero, enemy);
+                case "Slime Plains":
+                    enemyspawnnumber = rnd.Next(1, 5);
+                    switch (enemyspawnnumber)
+                    {
+                        case 1:
+                            TierOneEnemyLibrary.WhiteSlime(enemy);
+                            break;
+                        case 2:
+                            TierOneEnemyLibrary.GreenSlime(enemy);
+                            break;
+                        case 3:
+                            TierOneEnemyLibrary.BlueSlime(enemy);
+                            break;
+                        case 4:
+                            TierOneEnemyLibrary.RedSlime(enemy);
+                            break;
+                    }
                     break;
-                case 2:
-                    TierOneEnemyLibrary.Slime(enemy);
-                    break;
-                case 3:
-                    TierOneEnemyLibrary.Skeleton(enemy);
+                case "Undead Lands":
+                    enemyspawnnumber = rnd.Next(1, 3);
+                    switch (enemyspawnnumber)
+                    {
+                        case 1:
+                            TierOneEnemyLibrary.Zombie(hero, enemy);
+                            break;
+                        case 2:
+                            TierOneEnemyLibrary.Skeleton(enemy);
+                            break;
+                    }
                     break;
             }
         }

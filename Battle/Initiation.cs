@@ -123,7 +123,7 @@ namespace RPG_Game_2
             hero.mana = hero.maxmana;
             hero.action = hero.maxaction;
 
-            Miscellaneous.turn = 1;
+            BattleFlow.turn = 1;
         }
     }
 }

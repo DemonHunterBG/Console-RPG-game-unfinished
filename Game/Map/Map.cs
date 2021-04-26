@@ -8,9 +8,11 @@ namespace RPG_Game_2
     {
         public static char[,] map;
         public static int[,] mapVisibility;
+        public static string mapname;
+        public static int mapnumber = 0;
         public static void Start(Hero hero)
         {
-            Miscellaneous.mapnumber++;
+            mapnumber++;
             MapGenerator.MapGenController();
             MapController(hero);
         }
@@ -129,7 +131,7 @@ namespace RPG_Game_2
                         hero.damage, hero.truedamage, hero.critical, hero.armour, hero.evasion);
                     break;
                 case 5:
-                    Console.Write("   [Initiative:{0} | Enemies encoutered:{1}] [Map:{2}]", hero.initiative, Enemy.enemyCount, Miscellaneous.mapnumber);
+                    Console.Write("   [Initiative:{0} | Enemies encoutered:{1}] [Map:{2} - {3}]", hero.initiative, Enemy.enemyCount, Map.mapnumber, Map.mapname);
                     break;
             }
             n++;
@@ -222,7 +224,7 @@ namespace RPG_Game_2
             switch (marker)
             {
                 case '!':
-                    if (Miscellaneous.mapnumber != 3)
+                    if (Map.mapnumber != 3)
                         Start(hero);
                     else 
                         end = true;

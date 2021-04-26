@@ -20,16 +20,68 @@ namespace RPG_Game_2
             enemy.initiative = 0;
         }
 
-        public static void Slime(Enemy enemy)
+        public static void WhiteSlime(Enemy enemy)
         {
-            Console.WriteLine("A slime approaches...");
-            enemy.name = "Slime";
+            Console.WriteLine("A White Slime approaches...");
+            enemy.name = "White Slime";
             enemy.clasS = "Slime";
             enemy.health = 10;
             enemy.armour = 0;
             enemy.evasion = 50;
             enemy.damage = 0;
             enemy.truedamage = 2;
+            enemy.initiative = 2;
+        }
+
+        public static void GreenSlime(Enemy enemy)
+        {
+            Console.WriteLine("A Green Slime approaches...");
+            enemy.name = "Green Slime";
+            enemy.clasS = "Slime";
+            enemy.health = 20;
+            enemy.armour = 0;
+            enemy.evasion = 50;
+            enemy.damage = 2;
+            enemy.truedamage = 0;
+            enemy.initiative = 2;
+        }
+
+        public static void BlueSlime(Enemy enemy)
+        {
+            Console.WriteLine("A Blue Slime approaches...");
+            enemy.name = "Blue Slime";
+            enemy.clasS = "Slime";
+            enemy.health = 10;
+            enemy.armour = 50;
+            enemy.evasion = 50;
+            enemy.damage = 2;
+            enemy.truedamage = 0;
+            enemy.initiative = 2;
+        }
+
+        public static void RedSlime(Enemy enemy)
+        {
+            Console.WriteLine("A Red Slime approaches...");
+            enemy.name = "Red Slime";
+            enemy.clasS = "Slime";
+            enemy.health = 10;
+            enemy.armour = 0;
+            enemy.evasion = 50;
+            enemy.damage = 1;
+            enemy.truedamage = 0;
+            enemy.initiative = 2;
+        }
+
+        public static void YellowSlime(Enemy enemy)
+        {
+            Console.WriteLine("A Yellow Slime approaches...");
+            enemy.name = "Yellow Slime";
+            enemy.clasS = "Slime";
+            enemy.health = 2;
+            enemy.armour = 0;
+            enemy.evasion = 90;
+            enemy.damage = 2;
+            enemy.truedamage = 0;
             enemy.initiative = 2;
         }
 

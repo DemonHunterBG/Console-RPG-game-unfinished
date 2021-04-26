@@ -18,6 +18,17 @@ namespace RPG_Game_2
         {
             Random random = new Random(Guid.NewGuid().GetHashCode());
 
+            int mapnumber = random.Next(1, 3);
+            switch (mapnumber)
+            {
+                case 1:
+                    Map.mapname = "Slime Plains";
+                    break;
+                case 2:
+                    Map.mapname = "Undead Lands";
+                    break;
+            }
+
             int ROWS = random.Next(5, 8);
             int COLS = random.Next(5, 8);
 
