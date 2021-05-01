@@ -6,4 +6,8 @@
     <RootNamespace>RPG_Game_2</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Enemy\EnemyAbilities\Undead\" />
+  </ItemGroup>
+
 </Project>

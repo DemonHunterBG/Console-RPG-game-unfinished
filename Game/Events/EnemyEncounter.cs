@@ -37,7 +37,7 @@ namespace RPG_Game_2
             switch (Map.mapname)
             {
                 case "Slime Plains":
-                    enemyspawnnumber = rnd.Next(1, 5);
+                    enemyspawnnumber = rnd.Next(1, 6);
                     switch (enemyspawnnumber)
                     {
                         case 1:
@@ -52,17 +52,26 @@ namespace RPG_Game_2
                         case 4:
                             TierOneEnemyLibrary.RedSlime(enemy);
                             break;
+                        case 5:
+                            TierOneEnemyLibrary.YellowSlime(enemy);
+                            break;
                     }
                     break;
                 case "Undead Lands":
-                    enemyspawnnumber = rnd.Next(1, 3);
+                    enemyspawnnumber = rnd.Next(1, 5);
                     switch (enemyspawnnumber)
                     {
                         case 1:
-                            TierOneEnemyLibrary.Zombie(hero, enemy);
+                            TierOneEnemyLibrary.Zombie(enemy);
                             break;
                         case 2:
+                            TierOneEnemyLibrary.ZombieDog(enemy);
+                            break;
+                        case 3:
                             TierOneEnemyLibrary.Skeleton(enemy);
+                            break;
+                        case 4:
+                            TierOneEnemyLibrary.SkeletonDog(enemy);
                             break;
                     }
                     break;

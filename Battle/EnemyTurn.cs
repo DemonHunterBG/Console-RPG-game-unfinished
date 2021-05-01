@@ -29,7 +29,25 @@ namespace RPG_Game_2
                                     break;
                             }
                             break;
+                        case "Zombie Dog":
+                            enemyaction = rnd.Next(1, 2);
+                            switch (enemyaction)
+                            {
+                                case 1:
+                                    EnemyAbilities.NormalAttack(hero, enemy);
+                                    break;
+                            }
+                            break;
                         case "Skeleton":
+                            enemyaction = rnd.Next(1, 2);
+                            switch (enemyaction)
+                            {
+                                case 1:
+                                    EnemyAbilities.NormalAttack(hero, enemy);
+                                    break;
+                            }
+                            break;
+                        case "Skeleton Dog":
                             enemyaction = rnd.Next(1, 2);
                             switch (enemyaction)
                             {

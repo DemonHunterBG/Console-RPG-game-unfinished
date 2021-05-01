@@ -14,6 +14,20 @@ namespace RPG_Game_2
         {
             mapnumber++;
             MapGenerator.MapGenController();
+            MapStart(hero);
+        }
+        
+        public static void MapStart(Hero hero)
+        {
+            Console.Clear();
+            Console.WriteLine("You look around you.....");
+            Console.ReadLine();
+            Console.Clear();
+            Console.Write("You have found yourself in the ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(mapname);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ReadLine();
             MapController(hero);
         }
 
@@ -108,9 +122,12 @@ namespace RPG_Game_2
             switch (n)
             {
                 case 1:
-                    Console.Write("   [{0} - {1}]", hero.name, hero.clasS);
+                    Console.Write("   [Map:{0} - {1}]", Map.mapnumber, Map.mapname);
                     break;
                 case 2:
+                    Console.Write("   [{0} - {1}]", hero.name, hero.clasS);
+                    break;
+                case 3:
                     if (hero.health < 0)
                     {
                         hero.health = 0;
@@ -122,16 +139,16 @@ namespace RPG_Game_2
                     Console.Write("   [Level:{0} | EXP:{1}/{2} | HP:{3}/{4}]",
                         hero.level, hero.experience, hero.maxexperience, hero.health, hero.maxhealth);
                     break;
-                case 3:
+                case 4:
                     Console.Write("   [Starting Mana:{0} Mana Regen:{1} | Starting Action:{2} Action Regen:{3}]",
                         hero.maxmana, hero.manaregen, hero.maxaction, hero.actionregen);
                     break;
-                case 4:
+                case 5:
                     Console.Write("   [DMG:{0} TrueDmg:{1} Critical Chance:{2}% | Armour:{3}%  Evasion Chance:{4}%]",
                         hero.damage, hero.truedamage, hero.critical, hero.armour, hero.evasion);
                     break;
-                case 5:
-                    Console.Write("   [Initiative:{0} | Enemies encoutered:{1}] [Map:{2} - {3}]", hero.initiative, Enemy.enemyCount, Map.mapnumber, Map.mapname);
+                case 6:
+                    Console.Write("   [Initiative:{0} | Enemies encoutered:{1}]", hero.initiative, Enemy.enemyCount);
                     break;
             }
             n++;

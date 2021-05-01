@@ -35,6 +35,8 @@ namespace RPG_Game_2
         }
         public static string NormalAttackText(string clasS, string name)
         {
+            Random rnd = new Random(Guid.NewGuid().GetHashCode());
+            int text;
             string attacktext = "";
             switch (clasS)
             {
@@ -44,8 +46,23 @@ namespace RPG_Game_2
                         case "Zombie":
                             attacktext = "-The Zombie hits you with its arm.";
                             break;
+                        case "Zombie Dog":
+                            text = rnd.Next(1, 3);
+                            switch (text)
+                            {
+                                case 1:
+                                    attacktext = "-The Zombie Dog bites your arm.";
+                                    break;
+                                case 2:
+                                    attacktext = "-The Zombie Dog bites your leg.";
+                                    break;
+                            }
+                            break;
                         case "Skeleton":
                             attacktext = "-The Skeleton slashes you with its dagger.";
+                            break;
+                        case "Skeleton Dog":
+                            attacktext = "-The Skeleton Dog slashes at you with its claws.";
                             break;
                     }
                     break;
@@ -53,15 +70,10 @@ namespace RPG_Game_2
                     switch (name)
                     {
                         case "White Slime":
-                            attacktext = "-The Slime shoots a piece of its body at you.";
-                            break;
                         case "Green Slime":
-                            attacktext = "-The Slime shoots a piece of its body at you.";
-                            break;
                         case "Blue Slime":
-                            attacktext = "-The Slime shoots a piece of its body at you.";
-                            break;
                         case "Red Slime":
+                        case "Yellow Slime":
                             attacktext = "-The Slime shoots a piece of its body at you.";
                             break;
                     }
