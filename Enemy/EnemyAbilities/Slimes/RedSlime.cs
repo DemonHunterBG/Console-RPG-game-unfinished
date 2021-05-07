@@ -12,7 +12,12 @@ namespace RPG_Game_2
             EnemyTurn.herohealth = Math.Round(hero.health - 15, 2, MidpointRounding.ToEven);
             EnemyTurn.damagedealt = hero.health - EnemyTurn.herohealth;
             EnemyTurn.outcome = "Critical";
-            enemy.health = 0;
+            enemy.health = 1;
+        }
+        public static void LeftOvers(Hero hero, Enemy enemy)
+        {
+            EnemyTurn.outcome = "Grey";
+            EnemyTurn.attacktext = "-The Slime Leftovers slowly move around harmlessly...";
         }
     }
 }

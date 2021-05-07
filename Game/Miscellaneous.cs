@@ -117,13 +117,20 @@ namespace RPG_Game_2
         public static void EnemyDefeatedText(Enemy enemy)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("You have defeated the " + enemy.name);
+            Console.WriteLine("\nYou have defeated the " + enemy.name);
             Console.ForegroundColor = ConsoleColor.White;
         }
         public static void HeroDefeatedText()
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("\n-You are bleeding out...");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        public static void AfterBattleRewards(double experienceGained, int moneyGained)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Experience Gained:{0}", experienceGained);
+            Console.WriteLine("   Money   Gained:{0}", moneyGained);
             Console.ForegroundColor = ConsoleColor.White;
         }
     }

@@ -29,6 +29,8 @@ namespace RPG_Game_2
         public double experience;
         public int maxexperience;
 
+        public static int money = 5;
+
         public static double maxhealthstatic = 0;
         public static double manaregenstatic = 0;
         public static double actionregenstatic = 0;

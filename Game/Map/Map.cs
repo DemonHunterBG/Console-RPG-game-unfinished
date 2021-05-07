@@ -136,8 +136,8 @@ namespace RPG_Game_2
                     {
                         hero.health = hero.maxhealth;
                     }
-                    Console.Write("   [Level:{0} | EXP:{1}/{2} | HP:{3}/{4}]",
-                        hero.level, hero.experience, hero.maxexperience, hero.health, hero.maxhealth);
+                    Console.Write("   [Level:{0} EXP:{1}/{2} | Money:{3} |HP:{4}/{5}]",
+                        hero.level, hero.experience, hero.maxexperience, Hero.money, hero.health, hero.maxhealth);
                     break;
                 case 4:
                     Console.Write("   [Starting Mana:{0} Mana Regen:{1} | Starting Action:{2} Action Regen:{3}]",

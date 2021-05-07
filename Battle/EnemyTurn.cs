@@ -96,10 +96,17 @@ namespace RPG_Game_2
                             }
                             break;
                         case "Red Slime":
-                            if (BattleFlow.turn >= 10)
-                                RedSlime.SpecialAttack(hero, enemy);
-                            else
+                            if (BattleFlow.turn < 10)
                                 EnemyAbilities.NormalAttack(hero, enemy);
+                            else if (BattleFlow.turn == 10)
+                            {
+                                enemy.name = "Slime Leftovers";
+                                RedSlime.SpecialAttack(hero, enemy);
+                            }
+                            else
+                            {
+                                RedSlime.LeftOvers(hero, enemy);
+                            }
 
                             break;
                         case "Yellow Slime":

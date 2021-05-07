@@ -21,13 +21,15 @@ namespace RPG_Game_2
 
                 Miscellaneous.BattleUI(hero, enemy);
 
+                bool enemydefeated = false;
                 if (hero.health <= 0)
                 {
                     HeroDefeated(hero, enemy);
                 }
-                else if (enemy.health <= 0)
+                else if (enemy.health <= 0 && battle == true && enemydefeated == false)
                 {
                     battle = YouHaveDefeatedTheEnemy(hero, enemy);
+                    enemydefeated = true;
                 }
 
                 if (battle == true)
@@ -51,9 +53,10 @@ namespace RPG_Game_2
 
                     HeroOutcome(hero, enemy);
 
-                    if (enemy.health <= 0 && battle == true)
+                    if (enemy.health <= 0 && battle == true && enemydefeated == false)
                     {
                         battle = YouHaveDefeatedTheEnemy(hero, enemy);
+                        enemydefeated = true;
                     }
                     else if (battle == true && continuee == true)
                     {
@@ -143,7 +146,13 @@ namespace RPG_Game_2
                     Miscellaneous.BattleUI(hero, enemy);
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine(HeroTurn.attacktext);
-                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    break;
+                case "Grey":
+                    Miscellaneous.BattleUI(hero, enemy);
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine(HeroTurn.attacktext);
+                    Console.ForegroundColor = ConsoleColor.White;
                     break;
             }
         }
@@ -246,16 +255,18 @@ namespace RPG_Game_2
 
         private static bool YouHaveDefeatedTheEnemy(Hero hero, Enemy enemy)
         {
-            bool battle;
+            bool battle = false;
+
             if (enemy.health < 0)
                 enemy.health = 0;
 
             Miscellaneous.EnemyDefeatedText(enemy);
+            Console.ReadLine();
+            Console.Clear();
+            LevelUpAndOtherDrops.AfterBattleDrops(hero, enemy);
 
-            battle = false;
             return battle;
         }
-
 
         private static void AfterTurnStats(Hero hero)
         {

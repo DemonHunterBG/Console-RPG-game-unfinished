@@ -45,7 +45,7 @@ namespace RPG_Game_2
             Console.ReadLine();
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\n-Choose a buff");
+            Console.WriteLine("-Choose a buff");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("-[1]Regenerate 5 health and for this round gain 5 max health.\n-[2]Get +1 damage for this battle.\n-[3]Get +1 Mana and Action regen for this battle.");
             Console.ForegroundColor = ConsoleColor.White;
