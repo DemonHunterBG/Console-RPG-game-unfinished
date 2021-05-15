@@ -10,6 +10,9 @@ namespace RPG_Game_2
         public static int[,] mapVisibility;
         public static string mapname;
         public static int mapnumber = 0;
+        public static int x = 0;
+        public static int y = 0;
+        public static char marker = '+';
         public static void Start(Hero hero)
         {
             mapnumber++;
@@ -19,6 +22,9 @@ namespace RPG_Game_2
         
         public static void MapStart(Hero hero)
         {
+            x = 0;
+            y = 0;
+            marker = '+';
             Console.Clear();
             Console.WriteLine("You look around you.....");
             Console.ReadLine();
@@ -35,11 +41,6 @@ namespace RPG_Game_2
         {
 
             Console.Clear();
-
-            map[0, 0] = 'X';
-            int x = 0;
-            int y = 0;
-            char marker = '+';
             bool end = false;
 
             while (end == false)
@@ -61,9 +62,9 @@ namespace RPG_Game_2
                     marker = map[y, x];
                 }
 
-                MapCharacterChecker(hero, ref marker, ref end);
-
                 map[y, x] = 'X';
+
+                MapCharacterChecker(hero, ref marker, ref end);
 
                 if (hero.health == 0)
                 {
@@ -247,8 +248,8 @@ namespace RPG_Game_2
                         end = true;
                     break;
                 case 'E':
-                    EnemyEncounter.EnemyEncounterChooser(hero);
                     marker = '+';
+                    EnemyEncounter.EnemyEncounterChooser(hero);
                     break;
             }
         }

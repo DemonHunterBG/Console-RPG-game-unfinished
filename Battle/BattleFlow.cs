@@ -7,10 +7,16 @@ namespace RPG_Game_2
     class BattleFlow
     {
         public static int turn = 1;
+        public static bool battle = true;
+
+        public static void BattleStart(Hero hero, Enemy enemy)
+        {
+            battle = true;
+            Battle(hero, enemy);
+        }
+
         public static void Battle(Hero hero, Enemy enemy)
         {
-
-            bool battle = true;
 
             while (battle == true)
             {
@@ -20,18 +26,19 @@ namespace RPG_Game_2
                 EnemyBeforeRoundStatsReset(enemy);
 
                 Miscellaneous.BattleUI(hero, enemy);
-
-                bool enemydefeated = false;
+                /*
                 if (hero.health <= 0)
                 {
                     HeroDefeated(hero, enemy);
                 }
-                else if (enemy.health <= 0 && battle == true && enemydefeated == false)
+                else if (enemy.health <= 0 && battle == true)
                 {
                     battle = YouHaveDefeatedTheEnemy(hero, enemy);
-                    enemydefeated = true;
+                    Console.ReadLine();
+                    AfterBattleStats(hero);
+                    Map.MapController(hero);
                 }
-
+                */
                 if (battle == true)
                 {
                     HeroTurn.HeroAction(hero, enemy);
@@ -53,10 +60,12 @@ namespace RPG_Game_2
 
                     HeroOutcome(hero, enemy);
 
-                    if (enemy.health <= 0 && battle == true && enemydefeated == false)
+                    if (enemy.health <= 0 && battle == true)
                     {
                         battle = YouHaveDefeatedTheEnemy(hero, enemy);
-                        enemydefeated = true;
+                        Console.ReadLine();
+                        AfterBattleStats(hero);
+                        Map.MapController(hero);
                     }
                     else if (battle == true && continuee == true)
                     {
@@ -71,7 +80,6 @@ namespace RPG_Game_2
                 AfterTurnStats(hero);
                 Console.ReadLine();
             }
-            AfterBattleStats(hero);
 
         }
 

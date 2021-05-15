@@ -27,8 +27,8 @@ namespace RPG_Game_2
             enemy.clasS = "Slime";
             enemy.health = 20;
             enemy.armour = 0;
-            enemy.evasion = 50;
-            enemy.damage = 2;
+            enemy.evasion = 40;
+            enemy.damage = 1;
             enemy.truedamage = 0;
             enemy.critical = 0;
             enemy.initiative = 2;
@@ -40,7 +40,7 @@ namespace RPG_Game_2
             enemy.clasS = "Slime";
             enemy.health = 10;
             enemy.armour = 35;
-            enemy.evasion = 50;
+            enemy.evasion = 40;
             enemy.damage = 2;
             enemy.truedamage = 0;
             enemy.critical = 0;
@@ -66,7 +66,7 @@ namespace RPG_Game_2
             enemy.clasS = "Slime";
             enemy.health = 2;
             enemy.armour = 0;
-            enemy.evasion = 90;
+            enemy.evasion = 80;
             enemy.damage = 2;
             enemy.truedamage = 0;
             enemy.critical = 0;

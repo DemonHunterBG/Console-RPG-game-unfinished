@@ -25,7 +25,7 @@ namespace RPG_Game_2
 
             BeforeBattleStats(hero);
 
-            BattleFlow.Battle(hero, enemy);
+            BattleFlow.BattleStart(hero, enemy);
         }
 
         private static void StatsToStatic(Hero hero)
@@ -89,8 +89,8 @@ namespace RPG_Game_2
                     break;
                 case 2:
                     Console.WriteLine("-The {0} hardens up for the battle.\n- +20% enemy Health.", enemy.name);
-                    enemy.health *= 1.2;
-                    enemy.maxhealth *= 1.2;
+                    enemy.health = Math.Round(enemy.health * 1.2, 2);
+                    enemy.maxhealth = Math.Round(enemy.maxhealth * 1.2, 2);
                     break;
                 case 3:
                     Console.WriteLine("-The {0} gets a running start.\n- +10 enemy Evasion Chance.", enemy.name);
